@@ -1,0 +1,89 @@
+===========================================
+  COMMANDES GITHUB - COPIER-COLLER
+===========================================
+
+✅ DÉJÀ FAIT :
+- Git initialisé
+- 190 fichiers commités
+- Prêt à pusher
+
+
+📱 ÉTAPE 1 : CRÉER LE REPO
+-------------------------------------------
+Aller sur : https://github.com/new
+
+Repository name: pointage-pro-africa
+Visibilité: Private (recommandé)
+NE PAS cocher : README, .gitignore, License
+
+Cliquer : Create repository
+
+
+🔗 ÉTAPE 2 : COPIER-COLLER CES COMMANDES
+-------------------------------------------
+
+REMPLACER "VOTRE-USERNAME" par votre nom GitHub !
+
+git remote add origin https://github.com/VOTRE-USERNAME/pointage-pro-africa.git
+git branch -M main
+git push -u origin main
+
+
+📝 EXEMPLE CONCRET :
+-------------------------------------------
+Si votre username est "johndoe" :
+
+git remote add origin https://github.com/johndoe/pointage-pro-africa.git
+git branch -M main
+git push -u origin main
+
+
+🔐 AUTHENTIFICATION
+-------------------------------------------
+Si demandé :
+Username: votre-username
+Password: VOTRE-PERSONAL-ACCESS-TOKEN
+
+Pas de token ?
+1. GitHub → Settings → Developer settings
+2. Personal access tokens → Generate
+3. Cocher "repo"
+4. Copier le token
+5. Utiliser comme password
+
+
+✅ VÉRIFICATION
+-------------------------------------------
+Rafraîchir GitHub → Voir 190 fichiers !
+
+
+🚀 ENSUITE : DÉPLOYER
+-------------------------------------------
+Vercel: https://vercel.com/new
+→ Import from GitHub
+→ Sélectionner pointage-pro-africa
+→ Deploy !
+
+Railway: https://railway.app/dashboard
+→ New Project
+→ Deploy from GitHub repo
+→ Sélectionner pointage-pro-africa
+→ Deploy !
+
+
+🎉 WORKFLOW FUTUR
+-------------------------------------------
+Après chaque modification :
+
+git add .
+git commit -m "Description"
+git push
+
+→ Vercel et Railway se mettent à jour auto !
+
+
+===========================================
+  COMMENCEZ PAR CRÉER LE REPO !
+  https://github.com/new
+===========================================
+

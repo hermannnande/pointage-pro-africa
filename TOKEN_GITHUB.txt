@@ -1,0 +1,44 @@
+=============================================
+  INSTRUCTIONS TOKEN GITHUB
+=============================================
+
+1. CRÉER LE TOKEN
+---------------------------------------------
+Aller sur : https://github.com/settings/tokens/new
+
+Configuration :
+- Note: Pointage Pro Africa
+- Expiration: 90 days
+- Cocher: [x] repo (full control)
+
+Cliquer : Generate token
+COPIER LE TOKEN !
+
+
+2. PUSHER AVEC LE TOKEN
+---------------------------------------------
+Dans PowerShell :
+
+git push -u origin main
+
+Quand demandé :
+Username: hermannande
+Password: [COLLER VOTRE TOKEN]
+
+(Le token remplace le mot de passe)
+
+
+3. LE TOKEN SERA SAUVEGARDÉ
+---------------------------------------------
+Windows Git Credential Manager le sauvegarde
+Vous n'aurez plus besoin de le ressaisir !
+
+
+ALTERNATIVE : URL AVEC TOKEN
+---------------------------------------------
+git remote set-url origin https://VOTRE-TOKEN@github.com/hermannande/pointage-pro-africa.git
+git push -u origin main
+
+
+=============================================
+
