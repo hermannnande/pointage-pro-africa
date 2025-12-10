@@ -1,0 +1,71 @@
+# Backend Laravel
+/backend/vendor/
+/backend/node_modules/
+/backend/.env
+/backend/storage/*.key
+/backend/storage/app/public/*
+!/backend/storage/app/public/.gitignore
+/backend/storage/framework/
+/backend/storage/logs/
+/backend/bootstrap/cache/*
+!/backend/bootstrap/cache/.gitignore
+/backend/.phpunit.result.cache
+/backend/Homestead.json
+/backend/Homestead.yaml
+/backend/auth.json
+/backend/npm-debug.log
+/backend/yarn-error.log
+/backend/.DS_Store
+/backend/Thumbs.db
+
+# Mobile Flutter
+/mobile/.dart_tool/
+/mobile/.flutter-plugins
+/mobile/.flutter-plugins-dependencies
+/mobile/.packages
+/mobile/.pub-cache/
+/mobile/.pub/
+/mobile/build/
+/mobile/.gradle/
+/mobile/android/.gradle/
+/mobile/android/app/debug/
+/mobile/android/app/profile/
+/mobile/android/app/release/
+/mobile/ios/Flutter/Flutter.framework
+/mobile/ios/Flutter/Flutter.podspec
+/mobile/ios/Pods/
+/mobile/ios/.symlinks/
+/mobile/ios/Flutter/Generated.xcconfig
+/mobile/ios/Runner/GeneratedPluginRegistrant.*
+/mobile/.DS_Store
+/mobile/pointage-release-key.jks
+/mobile/android/key.properties
+
+# Web Dashboard
+/web-dashboard/node_modules/
+/web-dashboard/dist/
+/web-dashboard/.env.local
+/web-dashboard/.env.production.local
+/web-dashboard/.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backups
+*.backup
+*.bak
+

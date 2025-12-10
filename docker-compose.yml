@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # Base de données MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: pointage_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pointage_africa
+      MYSQL_USER: pointage_user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - pointage_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend Laravel
+  backend:
+    image: php:8.2-fpm
+    container_name: pointage_backend
+    working_dir: /var/www
+    volumes:
+      - ./backend:/var/www
+    networks:
+      - pointage_network
+    depends_on:
+      mysql:
+        condition: service_healthy
+    command: >
+      sh -c "
+        apt-get update &&
+        apt-get install -y git curl zip unzip libpng-dev libonig-dev libxml2-dev libzip-dev &&
+        docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd zip &&
+        curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer &&
+        cd /var/www &&
+        composer install --no-interaction --prefer-dist --optimize-autoloader &&
+        cp -n .env.example .env || true &&
+        php artisan key:generate &&
+        php artisan jwt:secret --force &&
+        php artisan config:clear &&
+        php artisan migrate:fresh --seed --force &&
+        php artisan serve --host=0.0.0.0 --port=8000
+      "
+    ports:
+      - "8000:8000"
+
+volumes:
+  mysql_data:
+
+networks:
+  pointage_network:
+    driver: bridge
+
