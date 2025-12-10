@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy application files
-COPY . .
+# Copy application files from backend directory
+COPY backend/ /app/
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
